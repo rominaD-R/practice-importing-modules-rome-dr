@@ -11,10 +11,15 @@ function saveTasks(filePath, tasks) {
     fs.appendFileSync(filePath, tasks.toString());
 }
 
+function loadTasks(filePath) {
+    const content = fs.readFileSync(`${filePath}`, 'utf-8');
+    console.log(content);
+}
+
 const updatedContent = fs.readFileSync('tasks.json', 'utf-8');
 
 // saveTasks(tasks.json, ___);
 
 console.log(updatedContent);
 
-module.exports = { saveTasks }
+module.exports = { saveTasks, loadTasks }

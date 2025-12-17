@@ -20,6 +20,7 @@
 //      3. List all tasks.
 //      4. Save the updated task list back to the file.
 
+const path = require('path');
 const taskManager = require('./taskManager');
 const fileHandler = require('./fileHandler');
 
@@ -31,4 +32,4 @@ taskManager.listTasks(taskList);
 
 // fileHandler.saveTasks('tasks.json', taskManager.addTask(taskList, 'buy something'));
 fileHandler.saveTasks('tasks.json', taskList);
-
+fileHandler.loadTasks('tasks.json');
